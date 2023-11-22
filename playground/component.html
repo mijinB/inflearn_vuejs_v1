@@ -10,8 +10,12 @@
 <body>
     <div id="app">
         <app-header></app-header>
-        <app-content></app-content>
         <app-footer></app-footer>
+    </div>
+
+    <div id="app2">
+        <app-header></app-header>   <!-- 생성됨(전역 컴포넌트) -->
+        <app-footer></app-footer>   <!-- 생성 안 됨(지역 컴포넌트) -->
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -20,9 +24,6 @@
         // Vue.component('컴포넌트 이름', 컴포넌트 내용);
         Vue.component('app-header', {
             template: '<h1>Header</h1>'
-        });
-        Vue.component('app-content', {
-            template: '<div>content</div>'
         });
 
         new Vue({
@@ -34,6 +35,10 @@
                     template: '<footer>footer</footer>'
                 }
             }
+        });
+
+        new Vue({
+            el: '#app2',
         });
     </script>
 </body>
