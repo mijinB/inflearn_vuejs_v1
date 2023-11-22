@@ -24,6 +24,10 @@
         <div v-show="loading">
             Loading...
         </div>
+
+        <!-- TODO: input box를 만들고 입력된 값을 p 태그에 출려해보세요. -->
+        <input type="text" v-model="message">
+        <p>{{ message }}</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -34,7 +38,8 @@
                 num: 10,
                 uuid: 'abc1234',
                 name: 'text-blue',
-                loading: true
+                loading: true,
+                message: ''
             },
             computed: {
                 doubleNum: function () {
